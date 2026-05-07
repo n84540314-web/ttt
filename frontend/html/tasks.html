@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tasks</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="container">
+    <h1 class="page-title">Tasks</h1>
+
+    <div id="taskDetail"></div>
+
+    <div class="card" id="filters">
+      <input type="text" id="search" placeholder="Search tasks..." style="padding:6px;border:1px solid #ccc;border-radius:3px">
+      <select id="filterStatus" style="padding:6px">
+        <option value="">All Status</option>
+        <option>Not Started</option>
+        <option>In Progress</option>
+        <option>Pending Review</option>
+        <option>Verified Completed</option>
+        <option>Needs Rework</option>
+        <option>Overdue</option>
+      </select>
+      <select id="filterPriority" style="padding:6px">
+        <option value="">All Priority</option>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+      <a href="create-task.html" id="createBtn" class="btn btn-small">Create Task</a>
+    </div>
+
+    <div id="taskList">Loading...</div>
+  </div>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/tasks.js"></script>
+</body>
+</html>

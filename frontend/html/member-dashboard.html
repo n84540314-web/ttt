@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Member Dashboard</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="container">
+    <h1 class="page-title">My Dashboard</h1>
+
+    <div id="stats" class="stats-grid"></div>
+
+    <div class="card">
+      <h3>Quick Actions</h3>
+      <a href="tasks.html" class="btn btn-small">View My Tasks</a>
+      <a href="projects.html" class="btn btn-small">View Projects</a>
+      <a href="notifications.html" class="btn btn-small">Notifications</a>
+    </div>
+
+    <div class="card">
+      <h3>My Recent Tasks</h3>
+      <div id="tasksList">Loading...</div>
+    </div>
+  </div>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/member-dashboard.js"></script>
+</body>
+</html>

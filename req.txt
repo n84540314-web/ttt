@@ -1,0 +1,184 @@
+============================================
+TEAM TASK MANAGER - PROJECT REQUIREMENTS DOC
+============================================
+
+1) PROJECT OVERVIEW
+-------------------
+Team Task Manager is a small full stack web app for managing
+teams, projects and tasks. It supports two user roles: Team Lead
+(Admin) and Team Member. Admins create projects and tasks, and
+members complete and submit them for review.
+
+2) WORKFLOW EXPLANATION
+-----------------------
+- Admin creates project + adds members + creates tasks
+- Members work on assigned tasks and submit for review
+- Admin reviews and either Approves or Requests Rework with feedback
+- Approved tasks become "Verified Completed"
+
+3) FEATURES
+-----------
+- Authentication with role selection
+- Role based access control
+- Create / edit / delete projects
+- Create / edit / delete tasks
+- Submit task for review
+- Approve / Request rework
+- Notifications
+- Activity logs / timeline
+- Search & filter
+- Member performance reports
+- Overdue task highlighting
+- Progress bars
+
+4) USER ROLES
+-------------
+- Team Lead (Admin): full access - manage everything
+- Team Member: can only see assigned projects/tasks, update status,
+  add notes, submit work, view feedback
+
+5) TASK STATUS FLOW
+-------------------
+Not Started -> In Progress -> Pending Review -> Verified Completed
+(or)
+Pending Review -> Needs Rework -> In Progress -> Pending Review ->
+Verified Completed
+
+Plus: Overdue (auto set when due date passes and not yet completed)
+
+6) TECHNOLOGIES USED
+--------------------
+Frontend  : HTML, CSS, Vanilla JavaScript
+Backend   : Node.js, Express.js
+Database  : Supabase (PostgreSQL)
+Auth      : Supabase Authentication
+Deployment: Railway
+
+7) FOLDER STRUCTURE
+-------------------
+team-task-manager/
+  frontend/   - html, css, js
+  backend/    - routes, controllers, middleware, config, utils
+  db/         - sql schema
+  script-video/ - demo script
+  README.md
+  req.txt
+  package.json
+
+8) INSTALLATION STEPS
+---------------------
+1. Install Node.js
+2. Clone / download project
+3. cd team-task-manager
+4. npm install
+5. Setup supabase project, run db/schema.sql
+6. Copy .env.example to .env and fill values
+7. npm start
+8. Open http://localhost:5000
+
+9) SETUP COMMANDS
+-----------------
+npm install
+npm start
+npm run dev   (uses nodemon)
+
+10) DEPENDENCIES
+----------------
+- express
+- @supabase/supabase-js
+- cors
+- dotenv
+- nodemon (dev only)
+
+11) SUPABASE SETUP
+------------------
+1. Create project at https://supabase.com
+2. Open SQL editor and paste db/schema.sql
+3. Get Project URL + service_role key from Settings -> API
+4. Put into .env
+
+12) RAILWAY DEPLOYMENT
+----------------------
+1. Push project to GitHub
+2. railway.app -> New Project -> Deploy from GitHub
+3. Set env vars: SUPABASE_URL, SUPABASE_SERVICE_KEY, PORT
+4. Done. Railway will auto deploy.
+
+13) API ENDPOINTS
+-----------------
+Auth:
+  POST /api/auth/signup
+  POST /api/auth/login
+  POST /api/auth/logout
+  GET  /api/auth/me
+
+Projects:
+  GET    /api/projects
+  POST   /api/projects
+  GET    /api/projects/:id
+  PUT    /api/projects/:id
+  DELETE /api/projects/:id
+  POST   /api/projects/:id/members
+  DELETE /api/projects/:id/members/:userId
+
+Tasks:
+  GET    /api/tasks
+  POST   /api/tasks
+  GET    /api/tasks/:id
+  PUT    /api/tasks/:id
+  DELETE /api/tasks/:id
+  POST   /api/tasks/:id/submit
+  POST   /api/tasks/:id/notes
+
+Reviews:
+  GET  /api/reviews/pending
+  POST /api/reviews/:id/approve
+  POST /api/reviews/:id/rework
+
+Notifications:
+  GET  /api/notifications
+  POST /api/notifications/read
+
+Reports:
+  GET /api/reports/dashboard
+  GET /api/reports/performance
+
+Members:
+  GET /api/members
+
+14) DASHBOARD FUNCTIONALITIES
+-----------------------------
+Admin Dashboard:
+  - Total Projects, Total Tasks
+  - Pending Review, Verified, Needs Rework, Overdue counts
+  - Active Members count
+  - Recent activity timeline
+  - Quick action buttons
+
+Member Dashboard:
+  - Assigned, In Progress, Pending Review, Verified counts
+  - Needs Rework, Upcoming Deadlines
+  - My recent tasks table
+
+15) UNIQUE FEATURES
+-------------------
+- Task review system (no direct completion)
+- Rework request with feedback comments
+- Activity timeline
+- Daily progress notes
+- Priority labels (Low/Medium/High)
+- Overdue red highlight
+- Project completion %
+- Performance tracking
+- Search & filters
+- Notifications inbox
+
+16) FUTURE ENHANCEMENTS
+-----------------------
+- Email notifications
+- File attachments on tasks
+- Gantt chart for projects
+- Dark mode
+- Mobile app version
+- Chat between team members
+- Export reports as PDF

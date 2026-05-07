@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="container">
+    <h1 class="page-title">Admin Dashboard</h1>
+
+    <div id="stats" class="stats-grid"></div>
+
+    <div class="row">
+      <div class="card">
+        <h3>Quick Actions</h3>
+        <p style="margin-bottom:10px">
+          <a href="create-project.html" class="btn btn-small">Create Project</a>
+          <a href="create-task.html" class="btn btn-small">Create Task</a>
+          <a href="members.html" class="btn btn-small">Manage Members</a>
+          <a href="task-review.html" class="btn btn-small">Review Tasks</a>
+          <a href="reports.html" class="btn btn-small">Generate Report</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card">
+        <h3>Recent Activities</h3>
+        <div id="activityList">Loading...</div>
+      </div>
+      <div class="card">
+        <h3>Tasks Pending Review</h3>
+        <div id="pendingList">Loading...</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/admin-dashboard.js"></script>
+</body>
+</html>
