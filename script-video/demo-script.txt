@@ -1,0 +1,111 @@
+============================================
+TEAM TASK MANAGER - DEMO VIDEO SCRIPT
+============================================
+Duration: about 3-4 minutes
+============================================
+
+[INTRO - 20 seconds]
+
+Hello everyone. My name is [Your Name] and today I am going to
+show you my project called "Team Task Manager". This is a full
+stack web application I built using HTML, CSS, JavaScript on the
+frontend and Node.js with Express.js on the backend. The database
+and authentication is handled by Supabase.
+
+The main idea of this project is to help small teams or college
+groups manage their projects and tasks in one place.
+
+
+[PROJECT WORKFLOW - 30 seconds]
+
+The project has two types of users:
+1. Team Lead (Admin)
+2. Team Member
+
+The workflow is simple:
+- The admin creates a project and tasks
+- The admin assigns tasks to members
+- Members work on tasks and submit them for review
+- The admin then approves the task or asks for rework
+- Only approved tasks become "Verified Completed"
+
+
+[SIGNUP AND LOGIN - 25 seconds]
+
+Let me start by showing the signup page. The user enters their
+full name, email, password and selects their role from a dropdown.
+
+Now I'll login. I will go to the login page, enter my email and
+password and pick the role "Team Lead". After login I am taken to
+the admin dashboard.
+
+
+[ADMIN DASHBOARD - 30 seconds]
+
+This is the admin dashboard. At the top we can see the statistics:
+total projects, total tasks, tasks pending review, verified tasks,
+needs rework, overdue tasks and active members.
+
+Below we have quick action buttons like Create Project, Create
+Task, Manage Members, Review Tasks and Generate Report.
+
+We also see recent activities and tasks waiting for review.
+
+
+[CREATING PROJECT AND TASK - 30 seconds]
+
+Let me quickly create a new project. I'll click "Create Project",
+fill in the name, description, deadline and submit.
+
+Now I'll create a task inside this project. I add a title,
+description, select the project, assign it to a member, set the
+priority and due date, then click create.
+
+
+[MEMBER VIEW - 30 seconds]
+
+Now I'll logout and login as a Team Member. The member dashboard
+shows only their own assigned tasks. They can see how many tasks
+are pending, in progress or completed.
+
+The member opens a task, updates the status to "In Progress",
+adds a progress note and finally clicks "Submit for Review".
+
+
+[REVIEW SYSTEM - 30 seconds]
+
+Now I switch back to the admin account. The submitted task
+appears in the Reviews section. The admin can read the member's
+comments, then either Approve or Request Rework with a feedback
+comment like "Fix API validation" or "Improve UI alignment".
+
+If rework is requested, the member sees the feedback in the task
+page and can fix the issue and resubmit.
+
+
+[NOTIFICATIONS AND REPORTS - 25 seconds]
+
+There is also a notifications page that shows alerts like new
+tasks, approved tasks, rework requests etc.
+
+The Reports page (admin only) shows performance of each member -
+total tasks, completed, pending and delayed tasks.
+
+
+[DATABASE & DEPLOYMENT - 20 seconds]
+
+The database is hosted on Supabase. There are 8 tables: users,
+projects, tasks, project_members, progress_notes, task_reviews,
+activity_logs and notifications.
+
+The whole app is deployed on Railway, with the database on
+Supabase cloud.
+
+
+[CONCLUSION - 15 seconds]
+
+That's a quick demo of my Team Task Manager project. It covers
+authentication, role based access, full CRUD operations, a real
+task review workflow and many helpful features.
+
+Thank you for watching!
